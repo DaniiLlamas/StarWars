@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { StarwarsapiService } from '../services/starwarsapi.service';
+import { IPersonaje } from '../interfaces/ipersonaje';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  personajes: IPersonaje[];
 
+  constructor(private StarwarsApi : StarwarsapiService) {}
+
+  ngOnInit(){
+    this.StarwarsApi.getPersonajes().subscribe(s => {this.personajes = data)
+  }
 }
