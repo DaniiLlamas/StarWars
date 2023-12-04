@@ -11,7 +11,20 @@ export class StarwarsapiService {
   private apiUrl = 'https://swapi.dev/api/people';
   constructor(private http: HttpClient) { }
 
-  getPersonajes():Observable<IData>{
-    return this.http.get<IData>(`${this.apiUrl}`);
+  getPersonajes(): Observable<IData> {
+    let a = this.http.get<IData>(`${this.apiUrl}`);;
+    let i = 1;
+    a.forEach(element => {
+      element.results.forEach(perso => {
+        perso.id = i;
+        i++;
+      })
+
+    });
+    return a;
+  }
+
+  getPersonajesById(id: number): Observable<IPersonaje> {
+    return this.http.get<IPersonaje>(`${this.apiUrl}/${id}`)
   }
 }

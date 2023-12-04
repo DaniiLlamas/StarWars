@@ -12,15 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'listado-page',
-    loadChildren: () => import('./listado-page/listado-page.module').then( m => m.ListadoPagePageModule)
-  },
-  {
-    path: 'mis-personajes-page',
-    loadChildren: () => import('./mis-personajes-page/mis-personajes-page.module').then( m => m.MisPersonajesPagePageModule)
-  },
-  {
-    path: 'personaje-detalle-page',
+    path: 'personaje-detalle-page/:id',
     loadChildren: () => import('./personaje-detalle-page/personaje-detalle-page.module').then( m => m.PersonajeDetallePagePageModule)
   },
   

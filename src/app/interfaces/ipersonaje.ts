@@ -1,4 +1,5 @@
 export interface IPersonaje {
+    id:number;
     name: string;
     height: string;
     mass: string;

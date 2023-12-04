@@ -11,11 +11,12 @@ export class HomePage {
 
   data !: IData;
   personajes!: IPersonaje[];
-
+  id = 1
   constructor(private StarwarsApi : StarwarsapiService) {
     StarwarsApi.getPersonajes().subscribe(
       resp=>{
         this.data = resp;
+        
         this.personajes = this.data.results
         console.log(resp)
       }

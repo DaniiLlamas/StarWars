@@ -3,10 +3,13 @@
 
  
   <ion-list *ngIf="personajes != undefined">
-    <ion-item *ngFor="let pj of personajes">
-        <p> {{pj.name}}</p>
+    <ion-item  *ngFor="let pj of personajes" [routerLink]="['/listado-page', pj.id]">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{pj.name}}</ion-card-title>
+          <ion-card-subtitle>{{pj.birth_year}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
     </ion-item>
-
   </ion-list>
-
 </ion-content>
