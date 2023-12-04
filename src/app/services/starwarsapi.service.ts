@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { IPersonaje } from '../interfaces/ipersonaje';
+import { Observable } from 'rxjs';
+import { IData } from '../interfaces/iData';
 @Injectable({
   providedIn: 'root'
 })
 export class StarwarsapiService {
 
-  private apiUrl = 'https://swapi.dev/api';
+  private apiUrl = 'https://swapi.dev/api/people';
   constructor(private http: HttpClient) { }
 
-  getPersonajes(){
-    return this.http.get(`${this.apiUrl}/people`);
+  getPersonajes():Observable<IData>{
+    return this.http.get<IData>(`${this.apiUrl}`);
   }
 }

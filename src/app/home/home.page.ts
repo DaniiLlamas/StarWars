@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StarwarsapiService } from '../services/starwarsapi.service';
 import { IPersonaje } from '../interfaces/ipersonaje';
+import { IData } from '../interfaces/iData';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -8,11 +9,21 @@ import { IPersonaje } from '../interfaces/ipersonaje';
 })
 export class HomePage {
 
-  personajes: IPersonaje[];
+  data !: IData;
+  personajes!: IPersonaje[];
 
-  constructor(private StarwarsApi : StarwarsapiService) {}
+  constructor(private StarwarsApi : StarwarsapiService) {
+    StarwarsApi.getPersonajes().subscribe(
+      resp=>{
+        this.data = resp;
+        this.personajes = this.data.results
+        console.log(resp)
+      }
+    )
+   
+  }
 
   ngOnInit(){
-    this.StarwarsApi.getPersonajes().subscribe(s => {this.personajes = data)
+    
   }
 }

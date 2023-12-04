@@ -1,8 +1,12 @@
 <ion-content [fullscreen]="true">
  <app-cabecera> </app-cabecera>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+ 
+  <ion-list *ngIf="personajes != undefined">
+    <ion-item *ngFor="let pj of personajes">
+        <p> {{pj.name}}</p>
+    </ion-item>
+
+  </ion-list>
+
 </ion-content>

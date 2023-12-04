@@ -7,4 +7,12 @@ export interface IPersonaje {
     eye_color: string;
     birth_year: string;
     gender: string;
+    homeworld : string;
+    films : String[]
+    species : String[]
+    starships : String[]
+    created : String
+    edited : String
+    url : String
+
 }
