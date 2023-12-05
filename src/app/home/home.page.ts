@@ -16,9 +16,8 @@ export class HomePage {
     StarwarsApi.getPersonajes().subscribe(
       resp=>{
         this.data = resp;
-        
+        console.log(this.data)
         this.personajes = this.data.results
-        console.log(resp)
       }
     )
    

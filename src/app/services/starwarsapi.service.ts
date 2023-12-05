@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IPersonaje } from '../interfaces/ipersonaje';
 import { Observable } from 'rxjs';
 import { IData } from '../interfaces/iData';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,16 +13,17 @@ export class StarwarsapiService {
   constructor(private http: HttpClient) { }
 
   getPersonajes(): Observable<IData> {
-    let a = this.http.get<IData>(`${this.apiUrl}`);;
-    let i = 1;
-    a.forEach(element => {
-      element.results.forEach(perso => {
-        perso.id = i;
-        i++;
+    return this.http.get<IData>(`${this.apiUrl}`).pipe(
+      map((data: IData) => {
+        let i = 1;
+        data.results.forEach((perso: IPersonaje) => {
+          // Asigna un id único a cada personaje dentro de los resultados
+          perso.id = i;
+          i++;
+        });
+        return data;
       })
-
-    });
-    return a;
+    );
   }
 
   getPersonajesById(id: number): Observable<IPersonaje> {
