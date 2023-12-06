@@ -1,11 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Personaje</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-cabecera></app-cabecera>
 
-<ion-content [fullscreen]="true">
-  <ion-card *ngIf="personajeRecibido != undefined">
-  <p> {{personajeRecibido.name}}</p>
-  </ion-card>
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-card *ngIf="personajeRecibido">
+      <ion-card-header>
+        <ion-card-title>{{ personajeRecibido.name }}</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item>
+            <ion-label>Altura:</ion-label>
+            <ion-text>{{ personajeRecibido.height }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Masa:</ion-label>
+            <ion-text>{{ personajeRecibido.mass }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Color de pelo:</ion-label>
+            <ion-text>{{ personajeRecibido.hair_color }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Color de piel:</ion-label>
+            <ion-text>{{ personajeRecibido.skin_color }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Género:</ion-label>
+            <ion-text>{{ personajeRecibido.gender }}</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+

@@ -1,0 +1,29 @@
+/* Estilos para el encabezado del menú */
+ion-list-header {
+    color: #ffe81f; /* Color amarillo para el encabezado */
+    font-weight: bold;
+    padding: 16px;
+  }
+  
+  /* Estilos para los ítems del menú */
+  ion-item {
+    --highlight-color-focused: transparent; /* Remover el resaltado al hacer clic */
+    --highlight-color: transparent; /* Remover el resaltado al pasar el cursor */
+  
+    padding: 12px 16px;
+    font-weight: bold;
+    color: #fff; /* Color blanco para los ítems del menú */
+  }
+  
+  /* Estilos para el icono en los ítems del menú */
+  ion-icon {
+    color: #ffe81f; /* Color amarillo para los iconos */
+    --ionicon-stroke-width: 32px; /* Aumentar el tamaño del icono */
+  }
+  
+  /* Estilos para el fondo y contenido del menú */
+  ion-menu {
+    --ion-background-color: #000; /* Fondo negro para el menú */
+    color: #fff; /* Texto blanco para el menú */
+  }
+  

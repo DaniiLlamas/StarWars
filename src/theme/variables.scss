@@ -101,7 +101,28 @@
     --ion-color-tertiary-rgb: 106,100,255;
     --ion-color-tertiary-contrast: #ffffff;
     --ion-color-tertiary-contrast-rgb: 255,255,255;
-    --ion-color-tertiary-shade: #5d58e0;
+    --ion-color-tertiary-shade: #5d58e0;ion-card-title {
+      text-align: center;
+      font-size: 1.5em;
+      color: #333; /* Cambia el color del texto según tus preferencias */
+    }
+    
+    /* Estilos para los elementos de lista */
+    ion-item {
+      --inner-padding-end: 20px;
+      --min-height: 40px;
+      border-bottom: 1px solid #ccc; /* Línea divisoria entre los elementos */
+    }
+    
+    /* Estilos para los detalles del personaje */
+    ion-label {
+      font-weight: bold;
+      color: #555; /* Color del texto de la etiqueta */
+    }
+    
+    ion-text {
+      color: #777; /* Color del texto del detalle */
+    } 
     --ion-color-tertiary-tint: #7974ff;
 
     --ion-color-success: #2fdf75;
