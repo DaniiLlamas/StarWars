@@ -1,16 +1,19 @@
-<ion-content [fullscreen]="true">
- <app-cabecera> </app-cabecera>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>misfavs</ion-title>
+  </ion-toolbar>
+</ion-header>
 
- 
-  <ion-list *ngIf="personajes != undefined">
-    <ion-item  *ngFor="let pj of personajes">
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="misfavs != undefined">
+    <ion-item  *ngFor="let pj of misfavs">
       <ion-card>
         <ion-card-header>
           <ion-card-title [routerLink]="['/listado-page', pj.id]">{{pj.name}}</ion-card-title>
           <ion-card-subtitle>{{pj.birth_year}}</ion-card-subtitle>
-          <ion-button (click)="anadeFav(pj)"><ion-icon name="add-circle-outline"></ion-icon> </ion-button>
         </ion-card-header>
       </ion-card> 
+      
     </ion-item>
   </ion-list>
 </ion-content>

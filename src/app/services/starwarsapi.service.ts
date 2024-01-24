@@ -45,4 +45,7 @@ export class StarwarsapiService {
   getPersonajesById(id: number): Observable<IPersonaje> {
     return this.http.get<IPersonaje>(`${this.apiUrl}/${id}`)
   }
+
+
+  
 }

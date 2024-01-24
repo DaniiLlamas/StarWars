@@ -15,5 +15,5 @@ export interface IPersonaje {
     created : String
     edited : String
     url : String
-
+    idFB?:String
 }
