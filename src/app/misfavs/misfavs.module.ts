@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { MisfavsPageRoutingModule } from './misfavs-routing.module';
-
+import { ComponentsModule } from '../components/components.module';
 import { MisfavsPage } from './misfavs.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { MisfavsPage } from './misfavs.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MisfavsPageRoutingModule
+    MisfavsPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [MisfavsPage]
 })

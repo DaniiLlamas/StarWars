@@ -12,8 +12,8 @@ export interface IPersonaje {
     films : String[]
     species : String[]
     starships : String[]
-    created : String
-    edited : String
-    url : String
-    idFB?:String
+    created : string
+    edited : string
+    url : string
+    idFB?:string
 }

@@ -55,6 +55,14 @@ export class StarwarsfbService {
     return this.asf.collection<IPersonaje>(this.user).doc(id.toString()).valueChanges();
   }
 
+  deleteOneById(id: string |undefined): Promise<void> {
+    this.user = this.auth.currentUser?.uid;
+    console.log(id);
+    const documentRef = this.asf.collection<IPersonaje>(this.user).doc(id);
+    console.log("Aquí llego en el servicio")
+    return documentRef.delete();
+}
+
   
 
 }
