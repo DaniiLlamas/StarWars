@@ -9,13 +9,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./cabecera.component.scss'],
 })
 export class CabeceraComponent  implements OnInit {
-  usuario:any
+  usuario?:string
   constructor(private service:AuthService, private router:Router, private auth:Auth){ 
   
   }
 
   ngOnInit() {
-    this.usuario = this.auth.currentUser?.email
+    this.usuario = this.auth.currentUser?.email?.toString()
   }
 
   async deslog(){
