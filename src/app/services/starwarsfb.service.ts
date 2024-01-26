@@ -16,6 +16,7 @@ export class StarwarsfbService {
   }
 
   getAll(): Observable<IPersonaje[]> {
+    this.user = this.auth.currentUser?.uid
     console.log("llamando a firebase")
     return this.asf.collection<IPersonaje>(this.user).valueChanges();
     
@@ -24,6 +25,7 @@ export class StarwarsfbService {
 
   addOneFav(personaje: IPersonaje): Promise<DocumentReference> | void {
   // Realiza la verificación si el personaje ya existe antes de agregarlo
+  this.user = this.auth.currentUser?.uid
   return this.asf.collection<IPersonaje>(this.user, ref =>
     ref.where('name', '==', personaje.name)
   ).get().toPromise().then(querySnapshot => {
@@ -43,12 +45,14 @@ export class StarwarsfbService {
 
 
   updateId(idPasado:string):Promise<void>{
+    this.user = this.auth.currentUser?.uid
     const documentRef = this.asf.collection(this.user).doc(idPasado);
     return documentRef.update({ idFB: idPasado});
   }
 
   getOneById(id:number):Observable<IPersonaje | undefined> { 
-    return this.asf.collection<IPersonaje>('Starwarsfavs').doc(id.toString()).valueChanges();
+    this.user = this.auth.currentUser?.uid
+    return this.asf.collection<IPersonaje>(this.user).doc(id.toString()).valueChanges();
   }
 
   

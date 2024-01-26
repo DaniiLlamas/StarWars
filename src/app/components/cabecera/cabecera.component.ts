@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -8,12 +9,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./cabecera.component.scss'],
 })
 export class CabeceraComponent  implements OnInit {
-
-  constructor(private service:AuthService, private router:Router){ 
+  usuario:any
+  constructor(private service:AuthService, private router:Router, private auth:Auth){ 
   
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.usuario = this.auth.currentUser?.email
+  }
 
   async deslog(){
     await this.service.logout();
